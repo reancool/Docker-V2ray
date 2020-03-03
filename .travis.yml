@@ -19,8 +19,3 @@ script:
   - export IMAGE_NAME=$DOCKER_USERNAME/$DOCKER_IMAGE:$(uname -i)
   - docker build -t $IMAGE_NAME .
   - travis_wait 30 docker push $IMAGE_NAME
-  - if [ $(uname -i) = "x86_64" ]; then
-      export NEW_IMAGE_NAME=$DOCKER_USERNAME/$DOCKER_IMAGE:latest
-      docker tag $IMAGE_NAME $NEW_IMAGE_NAME
-      travis_wait 30 docker push $NEW_IMAGE_NAME
-    fi
