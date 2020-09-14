@@ -1,6 +1,4 @@
-# docker-v2ray
-
-[![Build Status](https://travis-ci.com/YOUSIKI/docker-v2ray.svg?branch=master)](https://travis-ci.com/YOUSIKI/docker-v2ray)
+# Docker-V2ray
 
 This is a docker image for v2ray.
 
@@ -46,3 +44,7 @@ docker run --network=host -v $(pwd)/v2ray_config.json:/etc/v2ray/config.json you
 - arm64
 - s390x
 - ppc64le
+
+## License
+
+Apache License 2.0

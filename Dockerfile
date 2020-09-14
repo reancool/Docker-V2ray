@@ -1,10 +1,10 @@
-FROM ubuntu:latest AS downloader
+FROM --platform=$TARGETPLATFORM ubuntu:latest AS downloader
 
 ADD https://install.direct/go.sh go.sh
 
 RUN chmod +x go.sh && ./go.sh
 
-FROM alpine:latest
+FROM --platform=$TARGETPLATFORM alpine:latest
 
 COPY --from=downloader /usr/bin/v2ray/v2ray /usr/bin/v2ray/
 COPY --from=downloader /usr/bin/v2ray/v2ctl /usr/bin/v2ray/
